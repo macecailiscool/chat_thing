@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Manager</title>
+</head>
+<body>
+    <h1>WebSocket Server Manager</h1>
+    <div id="status"></div>
+    <button id="start-button">Start Server</button>
+    <button id="stop-button">Stop Server</button>
+
+    <script>
+        const statusDisplay = document.getElementById("status");
+        const startButton = document.getElementById("start-button");
+        const stopButton = document.getElementById("stop-button");
+
+        const updateStatus = (status) => {
+            statusDisplay.textContent = `Server Status: ${status}`;
+        };
+
+        startButton.addEventListener("click", () => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/start-server", true);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        updateStatus("Server is running.");
+                    } else {
+                        updateStatus("Failed to start server.");
+                    }
+                }
+            };
+            xhr.send();
+        });
+
+        stopButton.addEventListener("click", () => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/stop-server", true);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        updateStatus("Server is stopped.");
+                    } else {
+                        updateStatus("Failed to stop server.");
+                    }
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
