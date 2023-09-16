@@ -34,7 +34,7 @@ You'll need the following software installed on your machine:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone [https://github.com/yourusername/chat-thing.git](https://github.com/macecailiscool/chat_thing)
+   git clone https://github.com/macecailiscool/chat_thing
    ```
 
 2. Navigate to the project folder:
