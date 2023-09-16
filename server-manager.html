@@ -2,6 +2,42 @@
 <html>
 <head>
     <title>Server Manager</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #333;
+    }
+
+    #status {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    #start-button,
+    #stop-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    #start-button:hover,
+    #stop-button:hover {
+        background-color: #0056b3;
+    }
+    </style>
 </head>
 <body>
     <h1>WebSocket Server Manager</h1>
